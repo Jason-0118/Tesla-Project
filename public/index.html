@@ -1,0 +1,160 @@
+</html>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Tesla</title>
+</head>
+
+<body>
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand"> <img
+                    src="https://www.pngitem.com/pimgs/m/106-1068175_tesla-logo-transparent-tesla-letters-logo-black-hd.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"> <a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"> <a href="/vehicle/model/Tesla Model 3" class="nav-link">Model 3</a></li>
+                    <li class="nav-item"> <a href="/vehicle/model/Tesla Model S" class="nav-link">Model S</a></li>
+                    <li class="nav-item"> <a href="/vehicle/model/Tesla Model X" class="nav-link">Model X</a></li>
+                    <li class="nav-item"> <a href="/vehicle/model/Tesla Model Y" class="nav-link">Model Y</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- image slider -->
+    <div id="carouselControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="images/c.jpg" alt="slide 1">
+                <div class="carousel-caption">
+                    <select class="form-select  mb-2 col-10" id="selector" onchange="getValue()">
+                        <option value="">Select a model</option>
+                        <option value="Tesla Model 3">Model 3</option>
+                        <option value="Tesla Model S">Model S</option>
+                        <option value="Tesla Model X">Model X</option>
+                        <option value="Tesla Model Y">Model Y</option>
+                    </select>
+                    <button type="button" class="btn btn-outline-light col-3" id="rateBtn">Expect Rate</button>
+                    <button type="button" class="btn btn-primary col-3" id="vehicleBtn">Search Vehicle</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="images/model3.png" alt="slide 2">
+
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="images/models.png" alt="slide 3">
+
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="images/modelx.png" alt="slide 4">
+
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="images/modely.png" alt="slide 5">
+
+            </div>
+            <!-- add controller -->
+            <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- footer start -->
+    <footer class="site-footer mt-3 p-3" style="background-color: rgb(18, 18, 54);">
+        <div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <h2 class="text-light">About Us</h2>
+                    <p class="text-justify">
+                        This is our team!
+                    </p>
+                </div>
+
+                <div class="col-12 col-md-8">
+                    <h2 class="text-light">Teammates' Project</h2>
+                    <ul class=" row list-unstyled ">
+                        <li class="col-3 col-md-6 p-1"><a href="/" target="_blank"><img src="./images/model3.png"
+                                    class="mw-100" alt="The first part from the left of a building"></a>
+                        </li>
+                        <li class="col-3 col-md-6 p-1"><a href="/" target="_blank"><img src="./images/models.png"
+                                    class="mw-100" alt="The second part from the left of a building"></a>
+                        </li>
+                        <li class="col-3 col-md-6 p-1"><a href="/" target="_blank"><img src="./images/modelx.png"
+                                    class="mw-100" alt="The third part from the left of a building"></a>
+                        </li>
+                        <li class="col-3 col-md-6 p-1"><a href="/" target="_blank"><img src="./images/modely.png"
+                                    class="mw-100" alt="The fourth part from the left of a building"></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="row ml-2">
+            <p>
+                Copyright &copy; 2021 All Rights Reserved by
+                <a href="/">Team Narwhal</a>.
+            </p>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+
+    <!-- event -->
+    <script>
+        var value = ''
+        function getValue() {
+            value = document.getElementById('selector').value
+            console.log('selected value is: ', value)
+        }
+        //
+        const rateBtn = document.querySelector('#rateBtn')
+        rateBtn.addEventListener('click', () => {
+            if (value !== '')
+                window.location.href = `/rate/model/${value}/`
+            else
+                alert('please select a tesla model')
+        })
+        const vehicleBtn = document.querySelector('#vehicleBtn')
+        vehicleBtn.addEventListener('click', () => {
+            if (value !== '')
+                window.location.href = `/vehicle/model/${value}/`
+            else
+                alert('please select a tesla model')
+        })
+    </script> <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

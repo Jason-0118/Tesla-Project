@@ -1,0 +1,16 @@
+
+[class*="col-"] {
+  padding: 1rem;
+}
+
+.navbar-brand img{
+  width: 170;
+}
+
+.carousel-item img {
+  background-size: cover;
+}
+
+h2,p{
+  color: #9b9b9b
+}

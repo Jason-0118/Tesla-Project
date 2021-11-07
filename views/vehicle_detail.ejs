@@ -1,0 +1,101 @@
+<%- include('header.ejs', {title: detail.whole }) %>
+
+    <div class="container">
+        <div class="vehicle align-items-center text-center">
+            <img src="<%- detail.vehicle_summary.url_image %> " alt="" class="col-12">
+        </div>
+
+        <table class="table table-hover table-dark col-12 text-center table-bordered">
+            <tbody>
+                <th rowspan="5" class="align-middle ">Vehicle Summary</th>
+                <tr>
+                    <th>Year:</th>
+                    <td>
+                        <%- detail.whole %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type:</th>
+                    <td>
+                        <%- detail.vehicle_summary.type %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Mileage:</th>
+                    <td>
+                        <%- detail.vehicle_summary.mileage %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>VIN:</th>
+                    <td>
+                        <%- detail.vehicle_summary.vin %>
+                    </td>
+                </tr>
+
+                <th rowspan="4" class="align-middle"> Vehicle History</th>
+                <tr>
+                    <th>Owner History: </th>
+                    <td>
+                        <%- owner %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Report History: </th>
+                    <td>
+                        <%- report %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Title History: </th>
+                    <td>
+                        <%- history %>
+                    </td>
+                </tr>
+
+                <th rowspan="<%- detail.cc.length + 1 %> " class="align-middle"> Comfort & Convenience</th>
+                <% for(let i of detail.cc) { %>
+                    <tr>
+                        <td colspan="2">
+                            <%- i %>
+                        </td>
+                    </tr>
+                <%}%>
+
+                <th rowspan="<%- detail.safty.length + 1 %> " class="align-middle"> Vehicle Safty</th>
+                <% for(let i of detail.safty) { %>
+                    <tr>
+                        <td colspan="2">
+                            <%- i %>
+                        </td>
+                    </tr>
+                <%}%>
+
+                <th rowspan="<%- detail.entertainment.length + 1 %> " class="align-middle"> Vehicle Entertainment</th>
+                <% for(let i of detail.entertainment) { %>
+                    <tr>
+                        <td colspan="2">
+                            <%- i %>
+                        </td>
+                    </tr>
+                <%}%>
+
+                <th rowspan="<%- detail.ee.length + 1 %> " class="align-middle"> Engine & Exterior</th>
+                <% for(let i of detail.ee) { %>
+                    <tr>
+                        <td colspan="2">
+                            <%- i %>
+                        </td>
+                    </tr>
+                <%}%>
+
+                
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <%- include('footer.ejs') %>
