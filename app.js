@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const PORT = process.env.PORT || 8000
+// const PORT = process.env.PORT || 3000
 
 //router
 var indexRouter = require('./routes/index');
@@ -49,7 +49,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(PORT, () => {
-  console.log(`server running on port ${PORT}`)
-})
+// app.listen(PORT, () => {
+//   console.log(`server running on port ${PORT}`)
+// })
 module.exports = app;
