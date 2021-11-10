@@ -56,3 +56,5 @@ app.use(function (err, req, res, next) {
 //   console.log(`server running on port ${PORT}`)
 // })
 module.exports = app;
+
+//http://3.145.21.49:3000/
