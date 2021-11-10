@@ -14,3 +14,19 @@
 h2,p{
   color: #9b9b9b
 }
+
+.like {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top:2%;
+  right:2%;
+}
+
+.like-no {
+  background:url("/images/unlike.png")no-repeat  ;
+}
+
+.like-yes {
+  background:url("/images/like.png")no-repeat ;
+}

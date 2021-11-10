@@ -10,6 +10,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var rateRouter = require('./routes/rate');
 var vehicleRouter = require('./routes/vehicle')
+var likeRouter = require('./routes/like')
 
 var app = express();
 
@@ -34,6 +35,7 @@ mongoose.connect(credentials.connection_string, {
 app.use('/', indexRouter);
 app.use('/rate', rateRouter);
 app.use('/vehicle', vehicleRouter)
+app.use('/like', likeRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

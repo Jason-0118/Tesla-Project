@@ -18,6 +18,8 @@ exports.get_vehicle = async function (req, res) {
 }
 
 
+
+
 exports.get_detail = async function (req, res) {
     let vehicle_detail = await Vehicle.find().where('_id').eq(req.params.detail)
     console.log(vehicle_detail)
