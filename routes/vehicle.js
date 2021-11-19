@@ -6,5 +6,6 @@ var vehicleController = require('../controllers/vehicleController')
 router.get('/', vehicleController.get_all)
 router.get('/model/:model', vehicleController.get_vehicle)
 router.get('/detail/:detail', vehicleController.get_detail)
+router.get('/update/:update', vehicleController.get_update)
 
 module.exports = router;

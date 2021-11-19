@@ -17,9 +17,6 @@ exports.get_vehicle = async function (req, res) {
     res.render('vehicle.ejs', { title: req.params.model, list: vehicle_list, titleArray })
 }
 
-
-
-
 exports.get_detail = async function (req, res) {
     let vehicle_detail = await Vehicle.find().where('_id').eq(req.params.detail)
     console.log(vehicle_detail)
@@ -33,4 +30,21 @@ exports.get_detail = async function (req, res) {
         report,
         owner
     })
+}
+
+exports.get_update = async function (req, res, next) {
+    try {
+        let vehicle = await Vehicle.find().where('_id').eq(req.params.update);
+        console.log(vehicle)
+
+        if (vehicle[0].like == 'like') {
+            vehicle[0].like = "unlike"
+        } else
+            vehicle[0].like = "like";
+        await vehicle[0].save()
+        res.redirect("/vehicle/model/" + vehicle[0].model)
+
+    } catch (err) {
+        next(err);
+    }
 }

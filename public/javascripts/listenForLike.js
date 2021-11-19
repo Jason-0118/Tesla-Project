@@ -1,9 +1,4 @@
-// const credentials = require('./dbCredentials')
-// const mongoose = require('mongoose')
-// mongoose.connect(credentials.connection_string, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-// });
+
 
 
 const listenForLike = () => {

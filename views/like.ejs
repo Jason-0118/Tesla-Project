@@ -1,11 +1,55 @@
 <%- include('header.ejs', {title: "Like List" }) %>
+<div class="container" style="background-color: rgb(18, 18, 54);">
+    <h1 class="col-12 text-center text-light">
+        Favourite List
+    </h1>
+    <a href="/like/deleteAll"><p>Clean All</p></a>
+    <div class="row">
+        <% for(let i=0; i<list.length; i++) { %>
+            <div class="col-md-6">
+                <div class="card mt-3">
+                    <%if(list[i].like == "unlike") {%> 
+                        <a href="<%-list[i].update%>">
+                            <button class="like like-no " id="like" value="<%- list[i]._id %> "></button>
+                        </a>
+                    <%} else{ %>
+                        <a href="<%-list[i].update%>">
+                            <button class="like like-yes " id="like" value="<%- list[i]._id %> "></button>
+                        </a>
+                    <%}%>
 
-    <div class="container text-center">
-        <h1>
-            My Favorites
-        </h1>
-        <p>To be continued</p>
+                    <div class="vehicle align-items-center text-center">
+                        <a href="<%-list[i].detail %>"><img class="card-img-top"
+                                src="<%-list[i].vehicle_summary.url_image %>"
+                                alt="This is a imgae of <%- list[i].whole %>" title="<%- list[i].whole %>"></a>
 
+                        <h3 class="card-title mt-3">
+                            <a href="<%-list[i].detail %>">
+                                <%- list[i].whole %>
+                            </a>
+                        </h3>
+
+                        <div class="mt-3 info">
+                            <h4 class="text d-block">
+                                <%-list[i].price %>
+                            </h4>
+                            <span class="text d-block">
+                                <%-list[i].vehicle_summary.type %>
+                            </span>
+                            <span class="text d-block">
+                                <%-list[i].vehicle_summary.mileage %>
+                            </span>
+                            <span class="text d-block">
+                                <%-titleArray[i] %>
+                        </div>
+                        </span>
+                        <a href="<%-list[i].detail %>"><span class="text d-block">Detail</span></a>
+                    </div>
+
+                </div>
+            </div>
+            <% } %>
     </div>
+</div>
 
     <%- include('footer.ejs') %>

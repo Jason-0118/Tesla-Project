@@ -23,4 +23,8 @@ VehicleSchema.virtual('whole').get(function () {
 VehicleSchema.virtual('detail').get(function () {
     return "/vehicle/detail/" + this._id
 })
+
+VehicleSchema.virtual('update').get(function () {
+    return "/vehicle/update/" + this._id
+})
 module.exports = mongoose.model('vehicle', VehicleSchema)
