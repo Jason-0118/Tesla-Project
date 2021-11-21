@@ -17,7 +17,7 @@ exports.delete_all = async function (req, res) {
     let vehicle_list = await Vehicle.find().where('like').eq('like')
     for (let i of vehicle_list) {
         i.like = "unlike"
-        i.save();
+        await i.save();
     }
     res.redirect('/like')
 }
