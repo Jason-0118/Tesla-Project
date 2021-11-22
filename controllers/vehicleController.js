@@ -35,8 +35,6 @@ exports.get_detail = async function (req, res) {
 exports.get_update = async function (req, res, next) {
     try {
         let vehicle = await Vehicle.find().where('_id').eq(req.params.update);
-        console.log(vehicle)
-
         if (vehicle[0].like == 'like') {
             vehicle[0].like = "unlike"
         } else

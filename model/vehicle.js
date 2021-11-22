@@ -27,4 +27,11 @@ VehicleSchema.virtual('detail').get(function () {
 VehicleSchema.virtual('update').get(function () {
     return "/vehicle/update/" + this._id
 })
+
+VehicleSchema.virtual('deleteFromLike').get(function () {
+    return "/like/delete/" + this._id
+})
+
+
+
 module.exports = mongoose.model('vehicle', VehicleSchema)
