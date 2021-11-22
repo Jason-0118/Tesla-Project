@@ -9,11 +9,11 @@
                     <div class="card mt-3">
                         <%if(list[i].like == "unlike") {%> 
                             <a href="<%-list[i].update%>">
-                                <button class="like like-no " id="like" value="<%- list[i]._id %> "></button>
+                                <div class="like like-no " id="like" value="<%- list[i]._id %> "></div>
                             </a>
                         <%} else{ %>
                             <a href="<%-list[i].update%>">
-                                <button class="like like-yes " id="like" value="<%- list[i]._id %> "></button>
+                                <div class="like like-yes " id="like" value="<%- list[i]._id %> "></div>
                             </a>
                         <%}%>
 
