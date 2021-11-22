@@ -1,10 +1,36 @@
 
 [class*="col-"] {
-  padding: 1rem;
+  padding: 0.6rem;
+}
+body{
+  background-color: rgb(18, 18, 54) ;
 }
 
+.carousel-item img {
+  height: 80%;
+  object-fit: cover;
+}
+
+#footer {
+  height:20%;
+}
 .navbar-brand img{
   width: 170;
+}
+
+.col-12 {
+  padding-left: 0;
+  padding-right:0;
+}
+
+.container .row {
+  margin-left: 0;
+  margin-right:0;
+}
+
+.vehicle img {
+  max-height: 350px;
+  object-fit: cover;
 }
 
 .carousel-item img {
@@ -29,4 +55,27 @@ h2,p{
 
 .like-yes {
   background:url("/images/like.png")no-repeat ;
+}
+
+@media (max-width:767px) {
+  #selector {
+    height: 3rem;
+  }
+
+  .table {
+    font-size: small;
+    }
+
+
+  #footer {
+    height: 20%;
+  }
+  #footer div p {
+    font-size: 0.8rem;
+  }
+
+  .carousel-item img {
+    height: 80%;
+    object-fit: cover;
+  }
 }
