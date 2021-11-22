@@ -47,6 +47,7 @@ h2,p{
   position: absolute;
   top:2%;
   right:2%;
+  cursor: default	;
 }
 
 .like-no {
