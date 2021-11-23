@@ -4,8 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// const PORT = process.env.PORT || 3000
-
 //router
 var indexRouter = require('./routes/index');
 var rateRouter = require('./routes/rate');
@@ -52,9 +50,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-// app.listen(PORT, () => {
-//   console.log(`server running on port ${PORT}`)
-// })
 module.exports = app;
 
 //http://3.145.21.49:3000/
