@@ -2,17 +2,17 @@
 
   <div class="container " style="background-color: rgb(18, 18, 54);">
     <div class="vehicle align-items-center text-center">
-      <img src="<%- intro.url_image %> " class="col-12">
+      <img src="<%- info.url_image %> " class="col-12">
     </div>
-    <h1 class="text-center col-12 text-light" >
-      <%- intro.name %>
+    <h1 class="text-center col-12 text-light">
+      <%- info.name %>
     </h1>
-    <div class="row " >
+    <div class="row ">
       <div class="col-12 col-md-12">
         <div class="card mt-3">
           <h1 class="text-center">Pros</h1>
           <ul class="list-unstyled list-group">
-            <%intro.pros.forEach(item=> { %>
+            <%info.pros.forEach(item=> { %>
               <li class="list-group-item text-center list-group-item-action">
                 <%- item %>
               </li>
@@ -25,7 +25,7 @@
         <div class="card mt-3">
           <h1 class="text-center">Cons</h1>
           <ul class="list-unstyled list-group">
-            <%intro.cons.forEach(item=> { %>
+            <%info.cons.forEach(item=> { %>
               <li class="list-group-item text-center list-group-item-action">
                 <%- item %>
               </li>
@@ -38,7 +38,7 @@
         <div class="card mt-3">
           <h1 class="text-center">News</h1>
           <ul class="list-unstyled list-group">
-            <%intro.news.forEach(item=> { %>
+            <%info.news.forEach(item=> { %>
               <li class="list-group-item text-center list-group-item-action">
                 <%- item %>
               </li>
@@ -51,7 +51,7 @@
         <div class="card mt-3">
           <h1 class="text-center">Expert Comment</h1>
           <ul class="list-unstyled list-group">
-            <%intro.comment.forEach(item=> { %>
+            <%info.comment.forEach(item=> { %>
               <li class="list-group-item text-center list-group-item-action">
                 <%- item %>
               </li>

@@ -9,7 +9,11 @@ exports.get_liked_vehicles = async function (req, res) {
         else
             titleArray.push('No title info')
     }
-    res.render('like.ejs', { title: req.params.model, list: vehicle_list, titleArray })
+    res.render('like.ejs', {
+        title: req.params.model,
+        list: vehicle_list,
+        titleArray
+    })
 }
 
 exports.delete_all = async function (req, res) {

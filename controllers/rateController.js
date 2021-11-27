@@ -9,10 +9,10 @@ exports.get_rate = function (req, res) {
             return response.json();
         })
         .then((data) => {
-            let intro = data
+            let info = data
             res.render('rate.ejs', {
                 title: req.params.model,
-                intro
+                info
             });
         })
 }
