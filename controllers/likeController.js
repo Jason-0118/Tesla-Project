@@ -2,13 +2,7 @@ const Vehicle = require('../model/vehicle')
 
 exports.get_liked_vehicles = async function (req, res) {
     let vehicle_list = await Vehicle.find().where('like').eq('like')
-    let titleArray = []
-    for (let i of vehicle_list) {
-        if (i.vehicle_history.title !== '')
-            titleArray.push(i.vehicle_history.title)
-        else
-            titleArray.push('No title info')
-    }
+    let titleArray = getTitle(vehicle_list)
     res.render('like.ejs', {
         title: req.params.model,
         list: vehicle_list,
@@ -30,4 +24,15 @@ exports.deleteSingle = async function (req, res) {
     vehicle[0].like = "unlike"
     await vehicle[0].save();
     res.redirect('/like')
+}
+
+function getTitle(list) {
+    let titleArray = []
+    for (let i of list) {
+        if (i.vehicle_history.title !== '')
+            titleArray.push(i.vehicle_history.title)
+        else
+            titleArray.push('No title info')
+    }
+    return titleArray;
 }

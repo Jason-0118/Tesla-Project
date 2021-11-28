@@ -2,13 +2,7 @@ const Vehicle = require('../model/vehicle')
 
 exports.get_vehicle = async function (req, res) {
     let vehicle_list = await Vehicle.find().where('model').eq(req.params.model)
-    let titleArray = []
-    for (let i of vehicle_list) {
-        if (i.vehicle_history.title !== '')
-            titleArray.push(i.vehicle_history.title)
-        else
-            titleArray.push('No title info')
-    }
+    let titleArray = getTitle(vehicle_list)
     res.render('vehicle.ejs', {
         title: req.params.model,
         list: vehicle_list, titleArray
@@ -41,4 +35,15 @@ exports.get_update = async function (req, res, next) {
     } catch (err) {
         next(err);
     }
+}
+
+function getTitle(list) {
+    let titleArray = []
+    for (let i of list) {
+        if (i.vehicle_history.title !== '')
+            titleArray.push(i.vehicle_history.title)
+        else
+            titleArray.push('No title info')
+    }
+    return titleArray;
 }
