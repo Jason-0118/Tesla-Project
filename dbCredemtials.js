@@ -1,2 +1,2 @@
 
-exports.connection_string = "mongodb+srv://jason:123@cs361.uyjuu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+exports.connection_string = "mongodb+srv://jason:123@tesla-cluster.xtoz4il.mongodb.net/?retryWrites=true&w=majority";
