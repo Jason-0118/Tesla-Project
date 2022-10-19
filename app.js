@@ -1,3 +1,4 @@
+const PORT = process.env.PORT || 3000
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -51,5 +52,7 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 module.exports = app;
-
+app.listen(PORT, () => {
+  console.log(`server running on port ${PORT}`)
+})
 //http://3.145.21.49:3000/
