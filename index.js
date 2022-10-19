@@ -6,10 +6,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 //router
-var indexRouter = require('./routes/index');
-var rateRouter = require('./routes/rate');
-var vehicleRouter = require('./routes/vehicle')
-var likeRouter = require('./routes/like')
+var indexRouter = require('./api/index');
+var rateRouter = require('./api/rate');
+var vehicleRouter = require('./api/vehicle')
+var likeRouter = require('./api/like')
 
 var app = express();
 
@@ -51,7 +51,8 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-module.exports = app;
+
+
 app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`)
 })
